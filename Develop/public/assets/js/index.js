@@ -1,12 +1,21 @@
 const fs = require('fs');
 const notes = require('./public/notes')
 // this route work? 
+// const tipForm = document.getElementById('tip-form');
+// const tipsContainer = document.getElementById('tip-container');
+const getStartedBtn = document.getElementsByClassName('.btn');
+// change 
 
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+
+getStartedBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.location.href = '/notes';
+});
 
 // comment
 
