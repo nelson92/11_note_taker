@@ -1,3 +1,7 @@
+const fs = require('fs');
+const notes = require('./public/notes')
+// this route work? 
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -10,8 +14,8 @@ if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
-  newNoteBtn = document.querySelector('.new-note');
-  noteList = document.querySelectorAll('.list-container .list-group');
+  newNoteBtn = document.querySelupector('.new-note');
+  noteList = document.querySelectorAll('.list-container .list-gro');
 }
 
 // Show an element
