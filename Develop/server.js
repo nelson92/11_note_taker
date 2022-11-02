@@ -2,22 +2,23 @@ const fs = require('fs');
 const express = require('express');
 const app = express();
 const path = require('path');
-const uuid = require('uuid');
-const api = require('./index.js');
+const uuid = require('./uuid');
+// const routes = require('./routes/notes')
+// const api = require('./index.js');
 // create new file for uuid? 
 
-// const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', api);
+// app.use('/api', api);
 
 app.use(express.static('public'));
 
-app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
-//   double check the path for the 2nd parameter
-);
+// app.get('/notes', (req, res) =>
+//   res.sendFile(path.join(__dirname, '/public/notes.html'))
+// //   double check the path for the 2nd parameter
+// );
 
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
@@ -42,3 +43,8 @@ app.post('/api/notes', (req, res) =>
 // JSON.parse(notes)
 
 // function to add notes
+
+
+app.listen(PORT, () =>
+  console.log(`Listening for requests on port ${PORT}! 🏎️`)
+);
