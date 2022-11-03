@@ -2,9 +2,9 @@ const fs = require('fs');
 const express = require('express');
 const app = express();
 const path = require('path');
-const uuid = require('./uuid');
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+const uuid = require('./Develop/uuid');
+const apiRoutes = require('./Develop/routes/apiRoutes');
+const htmlRoutes = require('./Develop/routes/htmlRoutes');
 
 // const routes = require('./routes/notes')
 // const api = require('./index.js');
