@@ -4,7 +4,7 @@
 This application runs by utilizing Express.js and JavaScript. The application is deployed to a live website hosted on Heroku
 
 Screenshot of application
-![alt text](assets/images/screenshot_1.png)
+![alt text](public/assets/images/screenshot_1.png)
 
 
 ## Table of Contents   
