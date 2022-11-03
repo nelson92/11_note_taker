@@ -3,6 +3,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const uuid = require('./uuid');
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
+
 // const routes = require('./routes/notes')
 // const api = require('./index.js');
 // create new file for uuid? 
@@ -11,7 +14,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use('/api', api);
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 app.use(express.static('public'));
 
@@ -20,15 +24,17 @@ app.use(express.static('public'));
 // //   double check the path for the 2nd parameter
 // );
 
-app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/index.html'))
-//   double check the path for the 2nd parameter 
-);
 
-// should read the db.json file and return all saved notes as json
-app.get('/api/notes', (req, res) =>
-  res.json('')
-  );
+
+
+
+
+// app.get('*', (req, res) =>
+//   res.sendFile(path.join(__dirname, '/public/index.html'))
+// //   double check the path for the 2nd parameter 
+// );
+
+
 
 // should receive a new tnote to save and add it to the db.json file, then return a new note to the client
 app.post('/api/notes', (req, res) =>
@@ -45,6 +51,6 @@ app.post('/api/notes', (req, res) =>
 // function to add notes
 
 
-app.listen(PORT, () =>
-  console.log(`Listening for requests on port ${PORT}! 🏎️`)
-);
+app.listen(PORT, () => {
+  console.log(`Listening for requests on port ${PORT}!`)
+});
