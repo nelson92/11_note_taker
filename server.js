@@ -1,11 +1,9 @@
-const fs = require('fs');
 const express = require('express');
 const app = express();
-const path = require('path');
-const uuid = require('./Develop/uuid');
-const apiRoutes = require('./Develop/routes/apiRoutes');
-const htmlRoutes = require('./Develop/routes/htmlRoutes');
-
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
+// const uuid = require('./uuid');
+// const fs = require('fs');
 // const routes = require('./routes/notes')
 // const api = require('./index.js');
 // create new file for uuid? 

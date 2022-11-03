@@ -1,6 +1,6 @@
 // 
-const fs
-const util
+// const fs
+// const util
 
 // building a Store class to export 
 // read, write, get note 

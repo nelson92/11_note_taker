@@ -1,4 +1,3 @@
-
 const path = require('path');
 const router = require('express').Router();
 
@@ -16,15 +15,3 @@ module.exports = router;
 
 
 
-// info/examples from mini project
-
-// notes.get('/:note_id', (req, res) => {
-
-// }
-// )
-
-
-// notes.delete()
-
-
-// notes.post('')
