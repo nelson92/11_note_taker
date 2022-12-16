@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const fs = require('fs');
+const uuid = require("../uuid");
 
 
 // should read the db.json file and return all saved notes 
@@ -14,8 +15,9 @@ router.post('/notes', (req,res) => {
   const id = uuid();
   const {title, text} = req.body
   const newNote = {title, text, id};
-    const newArray = JSON.parse(savedNotes);
+    
   const savedNotes = fs.readFileSync('./db/db.json');
+  const newArray = JSON.parse(savedNotes);
 
   newArray.push(newNote);
 
