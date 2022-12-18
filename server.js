@@ -7,11 +7,11 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
-app.use(express.static('public'));
 
 // should receive a new tnote to save and add it to the db.json file, then return a new note to the client
 // app.post('/api/notes', (req, res) =>

@@ -4,8 +4,8 @@ const uuid = require("../uuid");
 
 
 // should read the db.json file and return all saved notes 
-router.get('api/notes', (req,res) => {
-  var getNotes = fs.readFileSync('./db.db.json');
+router.get('/notes', (req,res) => {
+  var getNotes = fs.readFileSync('./db/db.json');
   var showNotes = JSON.parse(getNotes);
   return res.json(showNotes);
 })
@@ -22,9 +22,9 @@ router.post('/notes', (req,res) => {
   newArray.push(newNote);
 
   const info = JSON.stringify(newArray);
-  fs.writeFile('./db/db/json', info, (err) => {
+  fs.writeFile('./db/db.json', info, (err) => {
     err ? console.error("Error"): console.log("Success");
-
+    return res.json(newArray);
   }
   )
 })
